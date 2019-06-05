@@ -6,7 +6,7 @@ This is literally a copy of [jquery.maskedinput](https://github.com/excellalabs/
 
 ## maskedinput.mask()
 ### Arguments:
-1. HTMLElement or NodeList
+1. HTMLElement, NodeList, or HTMLCollection
 2. Mask (same as first argument of `$().mask()`)
 3. Options (optional, same as second argument of `$().mask()`)
 
@@ -17,7 +17,7 @@ maskedinput.mask(document.getElementById('phone'), '999-999-9999', { autoclear: 
 
 ## maskedinput.unmask()
 ### Arguments:
-1. HTMLElement or NodeList
+1. HTMLElement, NodeList, or HTMLCollection
 
 Usage Example:
 ```
