@@ -7,8 +7,8 @@ This is literally a copy of [jquery.maskedinput](https://github.com/excellalabs/
 ## maskedinput.mask()
 ### Arguments:
 1. HTMLElement, NodeList, or HTMLCollection
-2. Mask (same as first argument of `$().mask()`)
-3. Options (optional, same as second argument of `$().mask()`)
+2. Mask (same as first argument of `$('.some-selector').mask()`)
+3. Options (optional, same as second argument of `$('.some-selector').mask()`)
 
 Usage Example:
 ```
