@@ -1,3 +1,17 @@
+// CustomEvent polyfill for IE
+(function () {
+
+  if ( typeof window.CustomEvent === "function" ) return false;
+
+  function CustomEvent ( event, params ) {
+    params = params || { bubbles: false, cancelable: false, detail: null };
+    var evt = document.createEvent( 'CustomEvent' );
+    evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
+    return evt;
+   }
+
+  window.CustomEvent = CustomEvent;
+})();
 (function (win) {
 
   var ua = navigator.userAgent,
@@ -106,7 +120,7 @@
       }
 
       elements.forEach(function(input) {
-        var changeEvent = new Event('unmask');
+        var changeEvent = new CustomEvent('unmask');
         input.dispatchEvent(changeEvent);
       });
     },
@@ -165,7 +179,7 @@
       });
 
       elements.forEach(function(input) {
-        var changeEvent = new Event('unmask');
+        var changeEvent = new CustomEvent('unmask');
         input.dispatchEvent(changeEvent);
         var buffer = mask.split('').map(function(c, i) {
           if (c != '?') {
@@ -291,7 +305,7 @@
           checkVal();
 
           if (input.value != focusText) {
-            var changeEvent = new Event('change');
+            var changeEvent = new CustomEvent('change');
             input.dispatchEvent(changeEvent);
           }
         }
